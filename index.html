@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Rick and Morty Quiz Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <h1>The Rick and Morty Quiz</h1>
+    <div class="container">
+
+
+        <ul class="quiz-list js-quiz-list">
+            <li>
+                <form id ="js-question-list-form" method="post">
+                    <div class = "question-item-controls">
+                        <fieldset name = "question">
+                        <legend class = "question-item">This is a test question</legend>
+                        <input type = "radio" name = "answer" id = "option-0" value = "0"/>
+                        <label for ="option-0">Option 1</label>
+                        <input type = "radio" name = "answer" id = "option-1" value = "0"/>
+                        <label for ="option-1">Option 2</label>
+                        <input type = "radio" name = "answer" id = "option-2" value = "0"/>
+                        <label for ="option-2">Option 3</label>
+                        <input type = "radio" name = "answer" id = "option-3" value = "0"/>
+                        <label for ="option-3">Option 4</label>
+                        <input type = "radio" name = "answer" id = "option-4" value = "0"/>
+                        <label for ="option-4">Option 5</label>
+                    </fieldset>
+                    <button type ="submit">Submit</button>
+                    </div>
+                </form>
+
+
+
+            </li>
+        </ul>
+    </div>
+
+    <button type="button" name="button" class="js-begin-button">Begin Quiz</button>
+    <!-- link to jquery -->
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <!-- link to your app.js -->
+    <script src="app.js" charset="utf-8"></script>
+</body>
+
+</html>
