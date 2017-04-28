@@ -1,0 +1,46 @@
+html,body{
+    height: 100%;
+}
+
+img{
+    width: 100%;
+}
+input {
+    visibility:hidden;
+}
+
+ul {
+    list-style: none;
+}
+.left{
+    float: left;
+}
+
+.column-answers{
+    margin: 5px;
+}
+body{
+ background: url(http://wallpapercave.com/wp/JzfvVHJ.jpg) no-repeat;
+ background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.quiz{
+    width: 500px;
+
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width:405px) {
+    .quiz {
+        width: 300px;
+    }
+
+}
+
+h2,h1{
+    color:white;
+    text-align: center;
+    padding: 20px;
+}

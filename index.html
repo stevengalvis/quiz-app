@@ -5,37 +5,69 @@
     <meta charset="utf-8">
     <title>Rick and Morty Quiz Application</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
     <h1>The Rick and Morty Quiz</h1>
-    <div class="container">
+
+
+    <div class="container-fluid quiz">
 
 
         <ul class="quiz-list js-quiz-list">
             <li>
-                <form id ="js-question-list-form" method="post">
-                    <div class = "question-item-controls">
-                        <!-- image goes here? !-->
-                        <fieldset name = "question">
-                        <legend class = "question-item">This is a test question</legend>
-                        <input type = "radio" name = "answer" id = "option-0" value = "0"/>
-                        <label for ="option-0">Option 1</label>
-                        <input type = "radio" name = "answer" id = "option-1" value = "0"/>
-                        <label for ="option-1">Option 2</label>
-                        <input type = "radio" name = "answer" id = "option-2" value = "0"/>
-                        <label for ="option-2">Option 3</label>
-                        <input type = "radio" name = "answer" id = "option-3" value = "0"/>
-                        <label for ="option-3">Option 4</label>
-                        <input type = "radio" name = "answer" id = "option-4" value = "0"/>
-                        <label for ="option-4">Option 5</label>
-                    </fieldset>
+                <h2>What planet did they visit when they went to?</h2>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12 col-lg-12">
+                            <img class="img-responsive" src="images/tinyrick.png" />
+                        </div>
+                    </div>
+                </div>
+                <form id="js-question-list-form" method="post">
+                    <div class="question-item-controls">
+                        <fieldset name="question">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <div class="col-xs-12">
+                                            <div class="column-answers">
+                                                <label class="btn btn-primary btn-lg btn-block">
+    <input type="radio" name="answers" id="option1" autocomplete="off"> Radio 1
+  </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="column-answers">
+                                                <label class="btn btn-primary btn-lg btn-block">
+        <input type="radio" name="answers" id="option2" autocomplete="off"> Radio 2
+      </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="column-answers">
+                                                <label class="btn btn-primary btn-lg btn-block">
+        <input type="radio" name="answers" id="option3" autocomplete="off"> Radio 3
+      </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12">
+                                            <div class="column-answers">
+                                                <label class="btn btn-primary btn-lg btn-block">
+        <input type="radio" name="answers" id="option4" autocomplete="off"> Radio 4
+      </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
                     </div>
                 </form>
-                <button type ="submit">Submit</button>
-
             </li>
         </ul>
     </div>
