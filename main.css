@@ -1,5 +1,7 @@
 html,body{
     height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 img{
@@ -20,10 +22,14 @@ ul {
     margin: 5px;
 }
 body{
- background: url(http://wallpapercave.com/wp/JzfvVHJ.jpg) no-repeat;
+ background: url(http://wallpapercave.com/wp/JzfvVHJ.jpg) no-repeat center;
  background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 100%;
 
 }
 .quiz{
@@ -32,12 +38,12 @@ body{
 }
 
 /* MEDIA QUERIES */
-@media only screen and (max-width:405px) {
+/*@media only screen and (max-width:405px) {
     .quiz {
         width: 300px;
     }
 
-}
+}*/
 
 h2,h1{
     color:white;
