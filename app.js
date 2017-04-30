@@ -5,7 +5,7 @@ var state = {
     questionCount: 0,
 };
 
-var quizTemplate = '<li>' + '<i>aria-hidden="true"</i>' + '<h2 class = "js-question"></h2>' + '<div class="container-fluid">' + '<div class="row">' + '<div class="col-xs-12 col-md-12 col-lg-12">' +
+var quizTemplate = '<li>' + '<i></i>' + '<h2 class = "js-question"></h2>' + '<div class="container-fluid">' + '<div class="row">' + '<div class="col-xs-12 col-md-12 col-lg-12">' +
     '<img class="img-responsive js-main-image" src="" />' + '</div></div></div>' +
     '<form id="js-question-list-form" method="post">' +
     '<div class="quiz-item-controls">' + '<fieldset name="question">' +
@@ -45,7 +45,7 @@ function renderOptions(state, questionID) {
     var $listAnswersHTML = $('<div class="btn-group js-option-list" data-toggle="buttons">');
     var listOptionsHTML = state.questions[questionID].choices.map(function(option,index) {
         return '<div class="col-xs-12"><div class="column-answers">' +
-            '<label class="btn btn-primary btn-lg btn-block js-option">' +
+            '<label for = "' + index + '"' + 'class="btn btn-primary btn-lg btn-block js-option">' +
             '<input type="radio" name="answers"' + 'id="' + index + '"' + 'autocomplete="off">' +
             option + '</label></div></div>';
     });
@@ -92,6 +92,14 @@ $(function() {
         event.preventDefault();
         // var $userAnswer = $('input[name=answers]:checked', '#js-question-list-form').val();
     });
+
+    $('.js-start').on('click',function(event){
+        event.preventDefault();
+        renderQuestion(state, 4, quizTemplate);
+        console.log($('input[name=answers]:checked').val());
+        state.questionCount += 1;
+
+    })
 
 });
 //function for rendering answer:
