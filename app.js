@@ -46,8 +46,8 @@ function renderOptions(state, questionID) {
     var listOptionsHTML = state.questions[questionID].choices.map(function(option,index) {
         return '<div class="col-xs-12"><div class="column-answers">' +
             '<label for = "' + index + '"' + 'class="btn btn-primary btn-lg btn-block js-option">' +
-            '<input type="radio" name="answers"' + 'id="' + index + '"' + 'autocomplete="off">' +
-            option + '</label></div></div>';
+            '<input type="radio" name="answers"' + 'id="' + index + '"' + 'value ="' + option + '"' + 'autocomplete="off">' 
+            + option + '</label></div></div>';
     });
     $listAnswersHTML.html(listOptionsHTML);
     return $listAnswersHTML;
@@ -83,9 +83,7 @@ function renderAnswer(state, questionId, quiztemplate) {
 $(function() {
     $('.js-quiz-list').on('click', '.js-option', function(event) {
         // event.preventDefault();
-        renderQuestion(state, 4, quizTemplate);
-        console.log($('input[name=answers]:checked').val());
-        state.questionCount += 1;
+
     });
 
     $('#js-question-list-form').on('change',function(){
