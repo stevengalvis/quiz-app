@@ -37,6 +37,8 @@ function renderOptions(state, questionID) {
 
 //this function displays the question with the options
 function renderQuestion(state, questionId) {
+    var totalQuestionCount = state.questionCount;
+    totalQuestionCount += 1;
     var question = state.questions[questionId];
     var element = $('.js-quiz-layout');
     element.find('i').addClass("visuallyhidden");
@@ -44,6 +46,7 @@ function renderQuestion(state, questionId) {
     element.find('.js-card-text').text(question.question);
     element.find('.js-card-text').append(renderOptions(state, questionId));
     element.find('.js-card-text').append('</br>' + 'Total Correct Answers: ' + state.correctAnswers);
+    element.find('.js-card-text').append('</br>' + 'Question: ' + totalQuestionCount + ' out of ' + state.questions.length);
     $('.js-next').addClass('visuallyhidden');
     $('.js-start').addClass('visuallyhidden');
 }
@@ -60,7 +63,6 @@ function renderAnswer(state, questionId,userAnswer) {
         element.find('i').addClass("fa fa-check");
 
     }
-//need to increment correct ansers before displaying correct count
 
     else {
         element.find('i').removeClass('visuallyhidden');
@@ -71,6 +73,15 @@ function renderAnswer(state, questionId,userAnswer) {
     $('.js-start').addClass('visuallyhidden');
     $('.js-next').removeClass('visuallyhidden');
     state.questionCount +=1;
+}
+
+function renderResults(state){
+    $('.js-next').addClass('visuallyhidden');
+    $('.js-start').addClass('visuallyhidden');
+    var element = $('.js-quiz-layout');
+    element.find('.js-card-text').html('</br>' + 'Final Score: ' + state.correctAnswers + '<span> Out of ' + state.questions.length + '</span>');
+    element.find('.js-main-image').attr('src','images/rick-and-morty.jpg')
+
 }
 
 //questions with answers for quiz
@@ -89,17 +100,22 @@ $('form').on('change', 'input', function(e){
      //get questionId
      var answerId = e.target.id;
      var questionId = state.questionCount;
-     console.log(questionId);
-    console.log($targetLabel);
     var $userAnswer = $targetLabel.text();
-    console.log($userAnswer);
     renderAnswer(state,questionId,$userAnswer);
+
 });
 
 $('.btn-controls').on('click','.js-next',function(event){
     var questionId = state.questionCount;
+    if(questionId >= state.questions.length){
+        console.log('done');
+        renderResults(state);
+    }
     console.log(questionId);
+    console.log(state.questions.length);
     renderQuestion(state,questionId);
+
+
 })
 
     //start the quiz
@@ -108,21 +124,6 @@ $(function() {
     $('.js-start').on('click',function(event){
         event.preventDefault();
         renderQuestion(state, 0);
-
-
     });
 
 });
-//function for rendering answer:
-//this function will display a div
-//if getAnswer is true will render a true feedback
-//if getAnswer is false will render a false feedback(red highlighting)
-//needs a next button
-
-
-//function that keeps track of total questions
-//function that keeps track of total correct answers
-
-//event handler for updating total questions and correct answers
-
-//function for when quiz is done display results(dom manipulaiton)
