@@ -43,6 +43,7 @@ function renderQuestion(state, questionId) {
     element.find('.js-main-image').attr('src', question.imageQuestion);
     element.find('.js-card-text').text(question.question);
     element.find('.js-card-text').append(renderOptions(state, questionId));
+    element.find('.js-card-text').append('</br>' + 'Total Correct Answers: ' + state.correctAnswers);
     $('.js-next').addClass('visuallyhidden');
     $('.js-start').addClass('visuallyhidden');
 }
@@ -51,19 +52,22 @@ function renderAnswer(state, questionId,userAnswer) {
     var question = state.questions[questionId];
     var element = $('.js-quiz-layout');
     element.find('.js-main-image').attr('src',question.imageAnswer);
-    element.find('.js-card-text').text(question.answer);
     correctAnswer = checkAnswer(state,questionId,userAnswer);
     if (correctAnswer){
+        state.correctAnswers += 1;
         element.find('i').removeClass('visuallyhidden');
         element.find('i').removeClass("fa fa-times");
         element.find('i').addClass("fa fa-check");
 
     }
+//need to increment correct ansers before displaying correct count
+
     else {
         element.find('i').removeClass('visuallyhidden');
         element.find('i').removeClass('fa fa-check');
         element.find('i').addClass("fa fa-times");
     }
+    element.find('.js-card-text').text("The correct Answer is : " + question.answer);
     $('.js-start').addClass('visuallyhidden');
     $('.js-next').removeClass('visuallyhidden');
     state.questionCount +=1;
