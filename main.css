@@ -7,16 +7,8 @@ html,body{
 img{
     width: 100%;
 }
-input {
-    visibility:hidden;
-}
 
-ul {
-    list-style: none;
-}
-.left{
-    float: left;
-}
+
 
 .column-answers{
     margin: 5px;
@@ -32,11 +24,26 @@ body{
     height: 100%;
 
 }
-.quiz{
+.img-responsive{
     width: 500px;
 
 }
 
+input:focus + label.form-check-label,
+label.form-check-label:hover {
+    background-color: #286090;
+    border-color: #204d74;
+}
+
+.fa-check{
+    height: 100%;
+    color: green ;
+}
+
+.fa-times{
+    height: 100%;
+    color: red;
+}
 /* MEDIA QUERIES */
 /*@media only screen and (max-width:405px) {
     .quiz {
@@ -44,6 +51,20 @@ body{
     }
 
 }*/
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
 
 h2,h1{
     color:white;

@@ -5,44 +5,37 @@
     <meta charset="utf-8">
     <title>Rick and Morty Quiz Application</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
     <h1>The Rick and Morty Quiz</h1>
-
-
-    <div class="container quiz">
-
-
-        <ul class="quiz-list js-quiz-list">
-            <li>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-xs-12 col-md-12 col-lg-12">
-                            <img class="img-responsive" src="images/rick-and-morty.jpg" />
-                        </div>
-                    </div>
+    <div class="js-quiz-layout">
+        <i></i>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-md-12 col-lg-12">
+                    <img class="img-responsive js-main-image" src="images/rick-and-morty.jpg" />
                 </div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="btn-group" data-toggle="buttons">
-                            <div class="col-xs-12 col-md-12 col-lg-12">
-                                <div class="column-answers">
-                                    <button class="btn btn-primary btn-lg btn-block js-start">
-                       Start
-                   </button>
-
-                                </div>
-                            </div>
+            </div>
+            <br />
+            <div class="row">
+                <form id="js-question-list-form" class="col-md-6" method="post">
+                    <fieldset name="question" class="form-group card" aria-live="polite">
+                        <div class="card-block">
+                            <legend class="col-form-legend js-card-text"></legend>
                         </div>
-                    </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class = "btn-controls">
+            <button class="btn btn-primary btn-lg  js-start">Start</button>
                 </div>
-            </li>
-        </ul>
+        </div>
+
     </div>
+
 
     <!-- link to jquery -->
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
