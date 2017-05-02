@@ -39,10 +39,12 @@ function renderOptions(state, questionID) {
 function renderQuestion(state, questionId) {
     var question = state.questions[questionId];
     var element = $('.js-quiz-layout');
+    element.find('i').addClass("visuallyhidden");
     element.find('.js-main-image').attr('src', question.imageQuestion);
     element.find('.js-card-text').text(question.question);
     element.find('.js-card-text').append(renderOptions(state, questionId));
     $('.js-next').addClass('visuallyhidden');
+    $('.js-start').addClass('visuallyhidden');
 }
 
 function renderAnswer(state, questionId,userAnswer) {
@@ -52,15 +54,19 @@ function renderAnswer(state, questionId,userAnswer) {
     element.find('.js-card-text').text(question.answer);
     correctAnswer = checkAnswer(state,questionId,userAnswer);
     if (correctAnswer){
+        element.find('i').removeClass('visuallyhidden');
+        element.find('i').removeClass("fa fa-times");
         element.find('i').addClass("fa fa-check");
+
     }
     else {
+        element.find('i').removeClass('visuallyhidden');
+        element.find('i').removeClass('fa fa-check');
         element.find('i').addClass("fa fa-times");
     }
     $('.js-start').addClass('visuallyhidden');
-
-    $('.btn-controls').html('<button class="btn btn-primary btn-lg  js-next">Next</button>');
-
+    $('.js-next').removeClass('visuallyhidden');
+    state.questionCount +=1;
 }
 
 //questions with answers for quiz
@@ -79,6 +85,7 @@ $('form').on('change', 'input', function(e){
      //get questionId
      var answerId = e.target.id;
      var questionId = state.questionCount;
+     console.log(questionId);
     console.log($targetLabel);
     var $userAnswer = $targetLabel.text();
     console.log($userAnswer);
@@ -87,7 +94,7 @@ $('form').on('change', 'input', function(e){
 
 $('.btn-controls').on('click','.js-next',function(event){
     var questionId = state.questionCount;
-    questionId +=1;
+    console.log(questionId);
     renderQuestion(state,questionId);
 })
 
