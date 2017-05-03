@@ -17,7 +17,6 @@ body{
  background: url(http://wallpapercave.com/wp/JzfvVHJ.jpg) no-repeat center;
  background-position: center;
     background-repeat: no-repeat;
-    background-size: cover
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -35,15 +34,34 @@ label.form-check-label:hover {
     border-color: #204d74;
 }
 
+i {
+    display: block;
+}
+
+
 .fa-check{
-    height: 100%;
-    color: green ;
+    font-size: 50px;
+    color: green;
+    background-color: white;
 }
 
 .fa-times{
-    height: 100%;
+    font-size:50px;
     color: red;
+    background-color: white;
 }
+
+.card{
+    background-color: transparent;
+}
+form{
+    color: white;
+}
+
+.btn-controls{
+    margin-top: 10px;
+}
+
 /* MEDIA QUERIES */
 /*@media only screen and (max-width:405px) {
     .quiz {
@@ -51,6 +69,11 @@ label.form-check-label:hover {
     }
 
 }*/
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 .visuallyhidden {
     border: 0;
@@ -70,4 +93,5 @@ h2,h1{
     color:white;
     text-align: center;
     padding: 20px;
+    font-family: 'Butcherman', cursive;
 }

@@ -59,15 +59,15 @@ function renderAnswer(state, questionId,userAnswer) {
     if (correctAnswer){
         state.correctAnswers += 1;
         element.find('i').removeClass('visuallyhidden');
-        element.find('i').removeClass("fa fa-times");
-        element.find('i').addClass("fa fa-check");
+        element.find('i').removeClass("fa fa-times fa-5x");
+        element.find('i').addClass("fa fa-check fa-5x");
 
     }
 
     else {
         element.find('i').removeClass('visuallyhidden');
-        element.find('i').removeClass('fa fa-check');
-        element.find('i').addClass("fa fa-times");
+        element.find('i').removeClass('fa fa-check fa-5x');
+        element.find('i').addClass("fa fa-times fa-5x");
     }
     element.find('.js-card-text').text("The correct Answer is : " + question.answer);
     $('.js-start').addClass('visuallyhidden');
